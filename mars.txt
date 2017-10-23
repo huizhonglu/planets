@@ -1,0 +1,1000 @@
+   58  cat ../julia-0.6.0_MKL/
+   59  cat ../julia-0.6.0_MKL/all_modules
+   60  module add python64/2.7.10 gcc/6.1.0 intel64/14.0.0.080 cmake/3.6.1
+   61  module show python64/2.7.10
+   62  cp ../julia-0.6.0_MKL/Make.inc .
+   63  module show julia/0.5.0
+   64  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user 
+   65  diff Make.inc /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user
+   66  diff Make.inc ../julia-0.6.0_MKL/Make.inc.bak 
+   67  qstat -a |  egrep agb
+   68  qstat -f 181913
+   69  qstat -a |  egrep  181913
+   70  qstat -u mawusse
+   71  qalter -l walltime=120:00:00 179873.mp2.m 181913.mp2.m
+   72  qstat -u mawusse
+   73  diff Make.inc ../julia-0.6.0_MKL/Make.inc.bak 
+   74  vi Make.inc 
+   75  diff Make.inc ../julia-0.6.0_MKL/Make.inc.bak 
+   76  vi Make.inc 
+   77  ls
+   78  vi README.md 
+   79  make clean
+   80  make -j 8
+   81  make -C deps clean-openblas
+   82  history |  egrep diff
+   83  history |  egrep diff |  egrep Make
+   84  diff Make.inc /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user
+   85  diff Make.inc /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user | more
+   86  vi /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user
+   87  cd ../julia-0.5.2
+   88  diff Make.inc /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user | more
+   89  cd /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.5.0.2
+   90  find . -name '*blas*'
+   91  ll
+   92  ll lib/julia/lib*
+   93  ll lib/julia/lib*blas*
+   94  ll lib/julia/lib*lapa*
+   95  cd -
+   96  cd ../julia-0.6.0_Gnu/
+   97  make -j 8 > qq 2>&1
+   98  tail qq
+   99  make -C deps clean-openblas > uu 2>&1
+  100  make OPENBLAS_USE_THREAD=0 > qq2 2>&1
+  101  tail qq2
+  102  cd ..
+  103  cd julia-0.6.0_MKL/
+  104  ls
+  105  make clean
+  106  module list
+  107  module avail 2>&1 | egrep julia
+  108  ls
+  109  cat all_modules 
+  110  module list
+  111  module add intel64/17.4 
+  112  ls
+  113  cp Make.inc Make.inc.correct
+  114  which ifort
+  115  vi Make.inc
+  116  module list
+  117  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.6.0/
+  118  vi README.md 
+  119  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.6.0/
+  120  ls
+  121  cat all_modules 
+  122  vi README.md 
+  123  egrep -i prefix Make.inc
+  124  vi Make.inc
+  125  module list
+  126  vi Make.inc
+  127  make -j 8
+  128  ll
+  129  ll -tr
+  130  history
+  131  egrep -i clean REA*
+  132  make cleanall
+  133  make -j 8
+  134  cd ..
+  135  ls
+  136  tar xzvf julia-0.6.0-full.tar.gz > /dev/null
+  137  cd julia-0.6.0
+  138  cp ../julia-0.6.0_MKL/Make.inc .
+  139  make -j 8
+  140  egrep -i clean REA*
+  141  egrep cvmfs Make.inc 
+  142  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.6.0_Intel17
+  143  make
+  144  make install
+  145  history
+  146  vi run_config
+  147  module list
+  148  module list >> run_config 2>&1
+  149  module list
+  150  cd /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/julia/
+  151  cp 0.6.0 0.6.0_intel17
+  152  vi 0.6.0_intel17 
+  153  module list
+  154  vi 0.6.0_intel17 
+  155  pwd
+  156  module load julia/intel64/17.4
+  157  module spider julia
+  158  rm -f ~/.lmod.d/.cache/moduleT.x86_64_Linux.lua*
+  159  module spider julia
+  160  module add julia/0.6.0_intel17
+  161  julia
+  162  ls
+  163  cd -
+  164  ls
+  165  make cleanall
+  166  vi Make.inc 
+  167  cd ..
+  168  mv julia-0.6.0 julia-0.6.0.bak
+  169  module list
+  170  tar xzvf julia-0.6.0-full.tar.gz > /dev/null 2>&1
+  171  cd julia-0.6.0
+  172  cp Make.inc  Make.inc.bak
+  173  cp ../julia-0.6.0.bak/Make.inc .
+  174  make -j 8
+  175  find . -name 'fftw_wisdom-fftw-wisdom.o'
+  176  cd ./deps/scratch/fftw-3.3.6-pl1-double/tools/
+  177  icc -no-gcc -pthread -O3 -ansi-alias -malign-double -o .libs/fftw-wisdom fftw_wisdom-fftw-wisdom.o ../tests/bench-bench.o ../tests/bench-fftw-bench.o  ../threads/.libs/libfftw3_threads.so ../.libs/libfftw3.so ../libbench2/libbench2.a -lm -pthread -Wl,-rpath -Wl,/home/hlu/DOC/MP/Julia/julia-0.6.0/usr/lib
+  178  cd -
+  179  make -j 8
+  180  make
+  181  cd ..
+  182  rm -rf julia-0.6.0
+  183  ll -tr
+  184  exit
+  185  cd DOC
+  186  cd MP
+  187  cd OpenMPI/
+  188  ll -tr
+  189  cd openmpi-2.0.1_intel
+  190  ll -tr
+  191  cd ..
+  192  ll -tr
+  193  cd openmpi-2.0.1
+  194  ls
+  195  cat run_config.gcc 
+  196  cd ../openmpi-2.0.1_intel/
+  197  ls
+  198  cat run_config.intel15_threads 
+  199  module list
+  200  module rm intel64/14.0.0.080 openmpi/1.8.6_intel14 mkl64/10.1.3.027
+  201  cat run_config.intel15_threads 
+  202  module add intel64/15.3.187
+  203  ls
+  204  ./configure  --help > qq
+  205  vi qq
+  206  vi run_config.intel15_threads 
+  207  pwd
+  208  module spider openmpi
+  209  module spider openmpi/2.0.1_intel16
+  210  module show openmpi/2.0.1_intel16
+  211  vi run_config.intel15_threads 
+  212  module list
+  213  module rm intel64/15.3.187
+  214  vi run_config.intel15_threads 
+  215  make clean
+  216  cat ./run_config.intel15_threads 
+  217  bash ./run_config.intel15_threads 
+  218  cat run_config.intel15_threads 
+  219  make
+  220  module list
+  221  cat run_config.intel15_threads 
+  222  module add intel64/16.3
+  223  which icc
+  224  make clean
+  225  ./configure CC=icc CXX=icpc F77=ifort FC=ifort      --prefix=/cvmfs/opt.usherbrooke.ca/openmpi/2.0.1/intel16_stat --enable-static --enable-mpi-thread-multiple
+  226  make
+  227  history
+  228  make install
+  229  ll -tr run*
+  230  module list
+  231  history
+  232  vi run_config_stat
+  233  module list
+  234  vi run_config_stat
+  235  cat run_config_stat 
+  236  ll /cvmfs/opt.usherbrooke.ca/openmpi/2.0.1/intel16_stat
+  237  ll /cvmfs/opt.usherbrooke.ca/openmpi/2.0.1/intel16_stat/lib/
+  238  module spider openmpi
+  239  module show openmpi/2.0.1_intel16
+  240  cp /cvmfs/opt.usherbrooke.ca/modulesfiles/openmpi/2.0.1_intel16 /cvmfs/opt.usherbrooke.ca/modulesfiles/openmpi/2.0.1_intel16_stat
+  241  vi /cvmfs/opt.usherbrooke.ca/modulesfiles/openmpi/2.0.1_intel16_stat
+  242  history |  egrep sync
+  243  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/openmpi/2.0.1/intel16_stat/ /cvmfs/opt.usherbrooke.ca/modulesfiles/openmpi/2.0.1_intel16_stat
+  244  module spider openmpi
+  245  rm -f ~/.lmod.d/.cache/moduleT.x86_64_Linux.lua*
+  246  module spider openmpi
+  247  module add openmpi/2.0.1_intel16_stat
+  248  cd
+  249  cd DOC
+  250  cd
+  251  cd TEST
+  252  cd SIMPLE/
+  253  cd COMPLET/
+  254  mpif90 main.f90 
+  255  ldd a.out
+  256  mpif90 -static main.f90 
+  257  mpiexec -n 4 ./a.out2 
+  258  mpif90 main.f90 
+  259  mpiexec -n 4 ./a.out2 
+  260  ll -tr
+  261  mpiexec -n 4 ./a.out
+  262  module list
+  263  cat ~/inscription_cegep 
+  264  c
+  265  cd 
+  266  cd DOC
+  267  cd MP
+  268  cd Julia/
+  269  ls
+  270  ll -tr
+  271  cd julia-0.6.0
+  272  ls -al -tr
+  273  ps ux
+  274  ps ux| egrepp -i ifort
+  275  ps ux| egrep -i ifort
+  276  vi Make.inc
+  277  egrep ICC /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user 
+  278  vi Make.inc
+  279  cd ..
+  280  cd QQ
+  281  ls
+  282  rm -rf julia-0.6.0/
+  283  tar xzvf ../julia-0.6.0-full.tar.gz > /dev/null 2>&1
+  284  mv julia-0.6.0/ ../julia-mkl-gcc
+  285  mv ../julia-mkl-gcc ../julia-0.6.0-mkl-gcc
+  286  cd ../julia-0.6.0-mkl-gcc
+  287  module list
+  288  module rm intel64/16.3 openmpi/2.0.1_intel16_stat
+  289  cat ../julia-0.6.0_MKL/all_modules 
+  290  module add gcc/6.1.0 cmake/3.6.1 python64/2.7.10 intel64/14.0.0.080
+  291  module spider intel64
+  292  module add intel64/17.4
+  293  module list > all_modules 2>&1
+  294  ll -tr
+  295  ls
+  296  diff Make.inc ../julia-0.6.0/Make.inc
+  297  vi Make.inc 
+  298  module list
+  299  vi Make.inc 
+  300  egrep -i fflags Make.inc 
+  301  vi Make.inc 
+  302  diff Make.inc ../julia-0.6.0_MKL/Make.inc
+  303  make -j 8
+  304  make test
+  305  ls
+  306  ./julia 
+  307  make install
+  308  cd /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/julia/
+  309  ls
+  310  ll -tr
+  311  cp 0.6.0 0.6.0_gcc_intel17
+  312  vi 0.6.0_gcc_intel17
+  313  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.6.0_gcc_mkl_17/
+  314  vi 0.6.0_gcc_intel17
+  315  module list
+  316  vi 0.6.0_gcc_intel17
+  317  pwd
+  318  history |  egrep sync
+  319  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/0.6.0_gcc_mkl_17/ /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/julia/0.6.0_gcc_intel17 
+  320  ll -tr
+  321  cd -
+  322  ll -tr
+  323  cd ..
+  324  vi note
+  325  vi julia-0.6.0-mkl-gcc/Make.inc 
+  326  vi note
+  327  pwd
+  328  ll -tr
+  329  cd
+  330  pwd
+  331  ll -tr
+  332  cd DOC/MP/PBS/
+  333  ll -tr
+  334  cat qalter 
+  335  qstat -a |  egrep adia
+  336  qstat -a |  egrep adipaolo
+  337  qalter 189678.mp2.m -W queue=qtest
+  338  qstat -a |  egrep adipaolo
+  339  qalter 189679.mp2.m -W queue=qtest
+  340  qstat -a |  egrep adipaolo
+  341  checkjob 189678.mp2.m
+  342  exit
+  343  ps -aef | egrep julia
+  344  kill -9 22440
+  345  cd DOC
+  346  cd MP
+  347  cd PFFT/
+  348  ls
+  349  cd pfft-1.0.8-alpha
+  350  pwd
+  351  module add julia/0.5.0
+  352  julia
+  353  cd DOC
+  354  cd MP
+  355  cd 
+  356  cd TACHE/
+  357  cd Noureddine/
+  358  ll -tr
+  359  cd src_Celse_SuperLU_HluSuperLU_2.0
+  360  ls
+  361  cd ..
+  362  cd src_Celse_MUMPS_SEQ
+  363  ls
+  364  cd src/
+  365  egrep tinit */*.f*
+  366  vi main/pc3dsolver.f90
+  367  cd
+  368  cd DOC
+  369  cd MP
+  370  cd ABINIT/
+  371  ll -tr
+  372  module avail 2>&1 |  egrep -i abini
+  373  module show abinit/8.0.8b
+  374  ll /cvmfs/opt.usherbrooke.ca/abinit/8.0.8b/lib/pkgconfig
+  375  ll /cvmfs/opt.usherbrooke.ca/abinit/8.0.8b
+  376  vi ~/.bash_profile 
+  377  ssh ip03
+  378  cd Test_sklad_1/HZ/Dirac/2D/Hybrid/
+  379  ll -tr
+  380  vi result_8192_1st_try
+  381  cat ~/inscription_cegep 
+  382  ll
+  383  pwd
+  384  ls
+  385  pwd
+  386  ll -tr
+  387  mkdir UpdatedField
+  388  mv * UpdatedField/
+  389  ls
+  390  vi note
+  391  cd ../..
+  392  ls
+  393  vi note
+  394  pwd
+  395  ll
+  396  cd Hybrid/
+  397  vi SPLIT_OPERATOR.f90 
+  398  cd ~/DOC/MP/CalculQuebec/
+  399  cat slack 
+  400  cd
+  401  cd Test_sklad_1/HZ/Dirac/
+  402  ls
+  403  vi result_by_core 
+  404  find_user Djamai
+  405  ssh ip04
+  406  qstat -a |egrep dia
+  407  cd DOC/MP/PBS
+  408  cat qalter 
+  409  qstat -a |egrep dia| awk '{print "qalter " $1 " -W queue=qtest"}' > aa
+  410  tail aa
+  411  bash ./aa
+  412  qstat -a |egrep dia
+  413  qstat -a |egrep dia| more
+  414  bqmon -s mp2
+  415  qstat -a |egrep dia| more
+  416  qstat -a |egrep dia| egrep -v Q
+  417  exit
+  418  module list
+  419  module rm intel64/14.0.0.080 openmpi/1.8.6_intel14 mkl64/10.1.3.027
+  420  module avail 2>&1 |egrep R
+  421  module add R/3.4.1
+  422  cd DOC
+  423  cd P
+  424  cd R
+  425  cd MP
+  426  cd R
+  427  ll -tr
+  428  more note_install_package_dti 
+  429  module list
+  430  R CMD javareconf
+  431  ll  /cvmfs/opt.usherbrooke.ca/CentOS6/R/3.4.1/lib64/R
+  432  ll -tr /cvmfs/opt.usherbrooke.ca/CentOS6/R/3.4.1/lib64/R
+  433  which R
+  434  history | egrep sync
+  435  which R
+  436  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/R/3.4.1/ /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/R/3.4.1
+  437  exit
+  438  module list
+  439  module rm mkl64/10.1.3.027 openmpi/1.8.6_intel14 intel64/14.0.0.080
+  440  ll -tr /cvmfs/opt.usherbrooke.ca/CentOS6/R/3.4.1/lib64/R
+  441  module list\
+  442  module list
+  443  module add R/3.4.1
+  444  R
+  445  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/R/3.4.1/ /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/R/3.4.1
+  446  qstat -a | egrep dia
+  447  exit
+  448  pwd
+  449  ls
+  450  find_user djama
+  451  ssh ip04
+  452  ssh ip03
+  453  ssh ip04
+  454  ssh ip01
+  455  ssh ip03
+  456  ssh ip04
+  457  cd $PARALLEL_SCRATCH_MS_WIPE_ON_DECEMBER_2016 
+  458  cd $PARALLEL_SCRATCH_MS_WIPE_ON_AUGUST_2017 
+  459  df -m  .
+  460  ll -tr
+  461  exit
+  462  module list
+  463  module rm openmpi/1.8.6_intel14 mkl64/10.1.3.027 intel64/14.0.0.080
+  464  module show julia/0.6.0
+  465  module add gcc/6.1.0 python64/2.7.10
+  466  cd DOC
+  467  cd MP
+  468  cd Julia/
+  469  cd julia-0.6.0
+  470  make -j 8
+  471  module avail 2>&1 |  egrep gcc
+  472  module list
+  473  module rm gcc/6.1.0
+  474  make -j 8
+  475  cd ..
+  476  ll -tr
+  477  module list
+  478  mv julia-0.6.0 julia-0.6.0.error
+  479  tar xzvf julia-0.6.0-full.tar.gz
+  480  cd -
+  481  ls
+  482  ls ..
+  483  module list
+  484  module add gcc/6.1.0
+  485  cp ../julia-0.6.0_Gnu/Make.inc  
+  486  cp ../julia-0.6.0_Gnu/Make.inc   .
+  487  diff Make.inc  ../julia-0.6.0.error/Make.inc 
+  488  diff Make.inc  ../julia-0.6.0_MKL/Make.inc.bak 
+  489  vi Make.inc 
+  490  egrep -i openblas /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user 
+  491  egrep -i openblas /cvmfs/opt.usherbrooke.ca/CentOS6/Julia/Make.user  |  egrep -i system
+  492  vi Make.inc 
+  493  module avail 2>&1 |  egrep -i lapack
+  494  module add lapack64/3.6.1
+  495  diff Make.inc  ../julia-0.6.0_MKL/Make.inc.bak 
+  496  module list
+  497  make -j 8
+  498  module list
+  499  diff Make.inc  ../julia-0.6.0_MKL/Make.inc.bak 
+  500  ls
+  501  module list
+  502  module rm lapack64/3.6.1
+  503  rm -f ~/.lmod.d/.cache/moduleT.x86_64_Linux.lua*
+  504  module  spider openblas
+  505  module add openblas/0.2.20
+  506  diff Make.inc  ../julia-0.6.0_MKL/Make.inc.bak 
+  507  make -j 8
+  508  cd ..
+  509  mv julia-0.6.0 julia-0.6.0.error_2
+  510  tar xzvf julia-0.6.0-full.tar.gz  > /dev/null 2>&1
+  511  cd -
+  512  mv Make.inc Make.inc.bak
+  513  cp ../julia-0.6.0.error_2/Make.inc  .
+  514  diff Make.inc Make.inc.bak 
+  515  make -j 8
+  516  openblas/0.2.20
+  517  module list
+  518  module spider git
+  519  modle add git/2.5.3
+  520  module add git/2.5.3
+  521  make -j 8
+  522  egrep -i gmp Make.inc
+  523  module avail 2>&1 |  egrep -i gmp
+  524  module add gmp/6.1.0
+  525  egrep -i gmp Make.inc
+  526  egrep -in gmp Make.inc
+  527  vi Make.inc
+  528  diff Make.inc Make.inc.bak 
+  529  make -j 8
+  530  egrep -i fftw Make.inc
+  531  module list
+  532  make -j 8
+  533  module list
+  534  module show gmp/6.1.0
+  535  ls /opt/gmp/6.1.0/lib
+  536  make
+  537  diff Make.inc Make.inc.bak 
+  538  egrep -i laback Make.inc
+  539  egrep LIBBLAS
+  540  egrep LIBBLAS Make.inc
+  541  egrep -n LIBBLAS Make.inc
+  542  vi Make.inc
+  543  diff Make.inc Make.inc.bak 
+  544  vi Make.inc
+  545  make
+  546  module add cmake/3.6.1
+  547  module list > all_modules_2 2>&1
+  548  make
+  549  cat all_modules_2 
+  550  vi all_modules_2 
+  551  cd
+  552  find_user michaud
+  553  ssh ip03
+  554  ssh ip08
+  555  find_user djerr
+  556  ssh ip01
+  557  exit
+  558  qstat -a |  egrep borea
+  559  bqmon -s mp2
+  560  cd DOC
+  561  cd MP
+  562  cd PBS
+  563  ll -tr
+  564  cat qalter 
+  565  qstat -a |  egrep borea
+  566  qalter 211339.mp2.m -W queue=qtest5
+  567  qstat -a |  egrep borea
+  568  bqmon -s mp2
+  569  qstat -a |  egrep borea
+  570  bc -l
+  571  cat connect_test 
+  572  exit
+  573  cd Test_sklad_4/HZ/Dirac/BIND_CORE/
+  574  ll -tr
+  575  ll -tr res*
+  576  pwd
+  577  cat result_O3_AVX2_960 
+  578  pwd
+  579  cat result_O3_AVX2_960 
+  580  qstat -a |  egrep dia
+  581  exit
+  582  find_user ema3813
+  583  cat result_O3_AVX2_960 
+  584  exit
+  585  find_user ema3813
+  586  exit
+  587  find_user ema3813
+  588  ssh ip14
+  589  cd TACHE/
+  590  ls
+  591  cd Noureddine/
+  592  ls
+  593  ll
+  594  ll -tr
+  595  cd src_Celse_MUMPS_SEQ
+  596  ls
+  597  cd src/
+  598  ls
+  599  vi Makefile
+  600  cd coo2msr/
+  601  vi Makefile 
+  602  ssh ip14
+  603  cat inscription_cegep 
+  604  cd DOC/MP/Gate/gate_v8.0/BUILD/
+  605  ll -tr
+  606  cat nohup.out 
+  607  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/8.0/bin/
+  608  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/7.2/bin/
+  609  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/8.0/lib/ | wc -l
+  610  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/8.0/lib/libMetaIO.a 
+  611  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/7.2/lib/ | wc -l
+  612  ls
+  613  cd ..
+  614  cat qq
+  615  cd ..
+  616  cat qq
+  617  cd /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/Gate/
+  618  cp 7.2  8.0
+  619  vi 8.0 
+  620  ls 
+  621  ll
+  622  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/7.2/
+  623  ll /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/7.2/bin/
+  624  ll -tr
+  625  diff 8.0 7.2 
+  626  cd -
+  627  ls
+  628  mv qq all_modules_8.0
+  629  history | egrep rsync
+  630  cat ~/DOC/MP/CVMFS/note
+  631  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/geant4/4.10.3/ /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/geant4/4.10.3 
+  632  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/Gate/8.0/ /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/Gate/8.0 
+  633  ssh ip14
+  634  module avail 2>&1 |  egrep Gate
+  635  module show Gate/7.2
+  636  cd 
+  637  cd DOC
+  638  cd MP
+  639  cd Gate/
+  640  ll -tr
+  641  cat all_modules 
+  642  vi all_modules 
+  643  wget https://github.com/SimonRit/RTK/archive/v1.3.0.zip
+  644  ll -tr
+  645  cat all_modules 
+  646  module list
+  647  module rm intel64/14.0.0.080 openmpi/1.8.6_intel14 mkl64/10.1.3.027
+  648  module add cmake/3.3.1   gcc/5.2.0   
+  649  ll -tr
+  650  mkdir RTK
+  651  cd RTK
+  652  mv ../v1.3.0.zip .
+  653  unzip v1.3.0.zip 
+  654  cd RTK-1.3.0/
+  655  ls
+  656  ll
+  657  vi README.txt 
+  658  ls
+  659  vi ORGANIZATION.TXT 
+  660  egrep -i make *
+  661  egrep -il make *
+  662  egrep -il make * 2>/dev/null
+  663  ls
+  664  mkdir BUILD
+  665  cd BUILD
+  666  module list
+  667  module list > all_modules 2>&1
+  668  ccmake ..
+  669  module avail 2>&1 |  egrep  -i itk
+  670  cd ..
+  671  git clone git://itk.org/ITK.git
+  672  ll -tr
+  673  vi note
+  674  ssh ip14
+  675  exit
+  676  module list
+  677  module rm intel64/14.0.0.080 openmpi/1.8.6_intel14 mkl64/10.1.3.027
+  678  cd DOC
+  679  cd MP
+  680  cd Ga
+  681  ls
+  682  cd Gate/
+  683  ls
+  684  module list
+  685  module add cmake/3.3.1   gcc/5.2.0
+  686  source /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/bin/thisroot.sh
+  687  ls
+  688  cd geant4/
+  689  ls
+  690  cd 4.10.2/
+  691  ls
+  692  cat run_config 
+  693  cd ..
+  694  ls
+  695  mkdir 4.10.3
+  696  cd 4.10.
+  697  cd 4.10.3
+  698  pwd
+  699  ll -tr
+  700  tar xzvf geant4.10.03.p02.tar.gz 
+  701  tar xvf geant4.10.03.p02.tar.gz
+  702  ll -tr
+  703  tar xzvf patch_geant4.10.03.p01.tar.gz
+  704  tar xvf patch_geant4.10.03.p01.tar.gz
+  705  ll -tr
+  706  rm -rf geant4.10.03 geant4.10.03.p02
+  707  tar xvf geant4.10.03.p02.tar.gz > /dev/null 2>&1
+  708  mv geant4.10.03.p02 geant4.10.03
+  709  tar xvf patch_geant4.10.03.p01.tar.gz
+  710  tar xvf patch_geant4.10.03.p02.tar.gz
+  711  ls
+  712  cd geant4.10.03
+  713  cp ../../4.10.2/run_config  .
+  714  cat run_config 
+  715  ls ../../4.10.2/
+  716  VI RUN_CONFIG
+  717  I
+  718  VI 
+  719  vi run_config
+  720  pwd
+  721  ll -tr
+  722  vi run_config 
+  723  cd ../../4.10.2
+  724  ls
+  725  cd -
+  726  ls
+  727  cat run_config 
+  728  vi run_config 
+  729  pwd
+  730  vi run_config 
+  731  pwd
+  732  vi run_config 
+  733  pwd
+  734  vi run_config 
+  735  cat run_config 
+  736  mkdir BUILD
+  737  cd BUILD
+  738  cmake -DCMAKE_C_COMPILER=/cvmfs/opt.usherbrooke.ca/gcc/5.2.0/bin/gcc -DCMAKE_CXX_COMPILER=/cvmfs/opt.usherbrooke.ca/gcc/5.2.0/bin/g++ -DGEANT4_INSTALL_DATA=ON -DCMAKE_INSTALL_PREFIX=/cvmfs/opt.usherbrooke.ca/CentOS6/geant4/4.10.3 /home/hlu/DOC/MP/Gate/geant4/4.10.3/geant4.10.03
+  739  cat run_config 
+  740  cat ../run_config 
+  741  make
+  742  make install
+  743  cd
+  744  cat inscription_cegep 
+  745  cd DOC
+  746  cd MP
+  747  ll |  egrep -i earth
+  748  ssh ip06
+  749  qstat -a |  egrep em
+  750  qstat -a 
+  751  bqmon -s mp2
+  752  qstat -a |  egrep qtest
+  753  ssh ip09
+  754  find_user rioux
+  755  ssh
+  756  find_user micha
+  757  ssh ip03
+  758  find_user sajjad
+  759  ssh ip01
+  760  find_user liu
+  761  ssh ip03
+  762  ssh ip06
+  763  qstat -a | egrep dia
+  764  exit
+  765  qstat -a | egrep dia | more
+  766  qstat -a | egrep dia | ake '{print "qalter -l walltime=480:00:00 " $1}' > qq
+  767  qstat -a | egrep dia | awk '{print "qalter -l walltime=480:00:00 " $1}' > qq
+  768  cat qq
+  769  bash ./qq
+  770  qstat -a | egrep dia | more
+  771  qstat -a | egrep laru
+  772  qalter -l walltime=240:00:00 230199.mp2.m 230917.mp2.m 230918.mp2.m 230919.mp2.m 230920.mp2.m
+  773  qstat -a | egrep laru
+  774  qstat -a | egrep dia
+  775  exit
+  776  qstat -a | egrep dia
+  777  qstat -a | egrep dia | more
+  778  ssh ip08
+  779  lsexit
+  780  cd TACHE/
+  781  ls
+  782  cd Noureddine/
+  783  ll
+  784  cd exit
+  785  exit
+  786  find_user michau
+  787  ssh ip03<
+  788  ssh ip03
+  789  module rm intel64/14.0.0.080  openmpi/1.8.6_intel14 
+  790  module list
+  791  module rm mkl64/10.1.3.027 
+  792  module add gcc/5.2.0 geant4/4.10.3 ecat7/7.0 lmf/3.0
+  793  source /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/bin/thisroot.sh
+  794  module add anaconda64/2.4.1.1
+  795  python
+  796  cd DOC
+  797  cd MP
+  798  cd VASP/
+  799  ll -tr
+  800  vi Makefile_vasp_5.2
+  801  ls
+  802  cat module 
+  803  module avail 2>&1 |  egrep -i openmpi |  egrep intel
+  804  ll -tr
+  805  vi Makefile_vasp_5.2
+  806  egrep -i heap *ake*
+  807  vi Makefile_vasp_5.2
+  808  cd
+  809  cd DOC
+  810  cd MP
+  811  cd PYTHON
+  812  ls
+  813  vi mini_conda
+  814  module avail 2>&1 |  egrep -i root
+  815  module show root/5.99.06
+  816  module show bioinformatics/root/5.32.01
+  817  cd /opt/bioinformatics/root/5.32.01/
+  818  ls
+  819  find . -iname '*py*'
+  820  find . -iname '*py*root*'
+  821  module list
+  822  module avail 2>&1 |  egrep -i root
+  823  module show root/5.99.06
+  824  module spider root/5.99.06
+  825  module list
+  826  cd /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/
+  827  ll
+  828  find . -iname '*py*root*'
+  829  cd
+  830  cd DOC
+  831  cd MP
+  832  cd VASP/
+  833  mv ~/makefile.include makfile.include.5.4.4_ALL
+  834  cd
+  835  cd DOC
+  836  cd MP
+  837  cd Gate/
+  838  ls
+  839  cd ..
+  840  ll
+  841  ll |  egrep -i root
+  842  cd Ga
+  843  cd Gate/
+  844  ls
+  845  cd geant4/
+  846  ls
+  847  cd ..
+  848  module avail 2>&1 |  egrep -i root
+  849  module show root/5.99.06
+  850  module spider root
+  851  module -r spider root
+  852  module show root/5.99.06
+  853  cd /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/
+  854  ll
+  855  ls -al -tr
+  856  find . -name '*py*root*'
+  857  ll
+  858  cd /cvmfs/bioinformatics.usherbrooke.ca/root/5.32.01/
+  859  find . -name '*py*root*'
+  860  find . -iname '*py*root*'
+  861  cd -
+  862  find . -iname '*py*root*'
+  863  cd
+  864  cd DOC
+  865  cd MP
+  866  cd Gate/
+  867  ls
+  868  cat all_modules_8.0 
+  869  module list
+  870  module rm intel64/14.0.0.080 openmpi/1.8.6_intel14 mkl64/10.1.3.027
+  871  module add cmake/3.3.1 gcc/5.2.0 geant4/4.10.3 ecat7/7.0 lmf/3.0
+  872  ls
+  873  cd ..
+  874  find . -name '*root*'
+  875  cd Ga
+  876  cd Gate/
+  877  find . -name '*root*'
+  878  wget https://root.cern.ch/download/root_v5.99.06.source.tar.gz
+  879  tar xzvf root_v5.99.06.source.tar.gz 
+  880  cd root
+  881  ls
+  882  ll /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/
+  883  mv /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/ /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06.bak
+  884  ls
+  885  pwd
+  886  ll ..
+  887  ./configure --help > run_config
+  888  vi run_config 
+  889  cd ..
+  890  ls
+  891  ll
+  892  vi all_modules
+  893  ls
+  894  cd root
+  895  ls
+  896  find . -iname '*py*root*'
+  897  ll
+  898  vi run_config 
+  899  cat run_config 
+  900  vi run_config 
+  901  module list
+  902  bash ./run_config 
+  903  vi /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06.bak/bin/thisroot.sh 
+  904  ls /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06.bak/lib/
+  905  make;make install
+  906  module list > all_MODULES_2017 2>&1
+  907  vi run_config 
+  908  vi config.log 
+  909  vi run_config 
+  910  egrep '/etc' *
+  911  egrep '/etc' * 2>/dev/null
+  912  vi run_config 
+  913  bash ./run_config 
+  914  make
+  915  make install
+  916  ll /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06//bin
+  917  ll /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/etc/
+  918  ll /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/etc/root/
+  919  ll /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/
+  920  cd /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06
+  921  find . -iname 'py*root*'
+  922  cd lib/
+  923  ll
+  924  cd root/
+  925  ll
+  926  ls
+  927  python
+  928  find . -name 'libRIO.so*'
+  929  module load root/5.99.06 
+  930  python
+  931  export LD_LIBRARY_PATH=/cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/lib/root:$LD_LIBRARY_PATH
+  932  python
+  933  ls
+  934  ls ..
+  935  module list
+  936  module show root/5.99.06
+  937  vi /opt/Modules/modulefiles.x86_64/root/5.99.06
+  938  ls lib*a
+  939  vi /opt/Modules/modulefiles.x86_64/root/5.99.06
+  940  vi source /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/bin/thisroot.sh
+  941  vi /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06/bin/thisroot.sh
+  942  module list
+  943  cd
+  944  history |  egrep syn
+  945  /opt.local/ccstools/bin/cvmfs_ccs_sync.sh /cvmfs/opt.usherbrooke.ca/CentOS6/root/5.99.06 /cvmfs/opt.usherbrooke.ca/CentOS6/Modules/modulefiles.x86_64/root/5.99.06 
+  946  module list
+  947  qstat -a |  egrep laig
+  948  qstat -a |  egrep ida
+  949  bqmon -s mp2
+  950  qstat -a |  egrep fat256
+  951  qstat -q
+  952  ssh ip14
+  953  cd DOC
+  954  cd MP
+  955  mkdir Intel_License
+  956  cd Intel_License/
+  957  vi note
+  958  cd
+  959   cd -
+  960  cd ..
+  961  ls
+  962  mkdir ANSYS_Fluent/
+  963  cd ANSYS_Fluent/
+  964  ls
+  965  vi note_license 
+  966  ssh adminccs@flexlm.ccs.usherbrooke.ca
+  967  exit
+  968  cat inscription_cegep 
+  969  exit
+  970  cat inscription_cegep 
+  971  pwd
+  972  ls
+  973  pwd
+  974  ll
+  975  module avail 2>&1 |  egrep namd2
+  976  module avail
+  977  module avail > qq 2>&1
+  978  vi qq
+  979  module add namd/2.10_gcc
+  980  module add gcc/4.7.0 openmpi_gcc64/1.6.5 fftw64/3.3.4_openmpi_gnu_float namd/2.10_gcc
+  981  module add anaconda64/2.4.1.1
+  982  ssh ip14
+  983  qstat -a |  egrep kon
+  984  qalter -l walltime=300:00:00 239042.mp2.m
+  985  bc -l
+  986  ssh ip08
+  987  cd DOC
+  988  cd MP
+  989  ls
+  990  cd ARCHIVE/
+  991  ll
+  992  cat note 
+  993  vi note 
+  994  exit
+  995  cat inscription_cegep 
+  996  exit
+  997  qstat -a |  egrep dia
+  998  exit
+  999  qstat -a |  egrep dia
+ 1000  exit
+ 1001  cd DOC
+ 1002  cd MP
+ 1003  ll -tr
+ 1004  cd ..
+ 1005  ls
+ 1006  history |  egrep cd
+ 1007  cd MP
+ 1008  cd CalculCanada/
+ 1009  ls
+ 1010  cd ..
+ 1011  cd CalculQuebec/
+ 1012  ls
+ 1013  cd GIT/
+ 1014  ll -tr
+ 1015  cat config_base 
+ 1016  git config --list
+ 1017  ll
+ 1018  vi config_base 
+ 1019  cat config_base 
+ 1020  mkdir planets
+ 1021  cd planets
+ 1022  git init 
+ 1023  ls -a
+ 1024  vi config_base 
+ 1025  cd ..
+ 1026  vi config_base 
+ 1027  cd -
+ 1028  mkdir moons
+ 1029  cd moons/
+ 1030  git init
+ 1031  git status
+ 1032  cd ..
+ 1033  ls
+ 1034  git status
+ 1035  ls
+ 1036  ls -al
+ 1037  git status
+ 1038  git add moons
+ 1039  git status
+ 1040  git commit moons/
+ 1041  git commit moons
+ 1042  ls
+ 1043  cd moons/
+ 1044  touch aa bb cc
+ 1045  cd ..
+ 1046  ls moons/
+ 1047  git add moons/*
+ 1048  git status
+ 1049  git commit -m "add moon files"
+ 1050  git status
+ 1051  vi .gitignore
+ 1052  git status
+ 1053  rm -rf moons/.git/
+ 1054  vi .gitignore
+ 1055  git status
+ 1056  ls > mars.txt
+ 1057  history > mars.txt 
