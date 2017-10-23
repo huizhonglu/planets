@@ -998,3 +998,5 @@
  1055  git status
  1056  ls > mars.txt
  1057  history > mars.txt 
+mars.txt
+moons
